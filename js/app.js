@@ -13,7 +13,6 @@ function navMenu() {
         //create li and a elements
         const list = document.createElement('li');
         const link = document.createElement('a');
-
         //extract datanav using gatAttribute
         //add text to <a>
         link.innerHTML = section.getAttribute('data-nav');
@@ -38,46 +37,46 @@ function navMenu() {
 navMenu();
 
 // Add class 'active' to section when near top of viewport
-function addActiveClass(section) {
-    // get the id from the section
-    const id = section.getAttribute('id');
+// function addActiveClass(section) {
+//     // get the id from the section
+//     const id = section.getAttribute('id');
 
-    // add the active class to the section
-    document.querySelector(`#${id}`).classList.add('your-active-class');
-}
+//     // add the active class to the section
+//     document.querySelector(`#${id}`).classList.add('your-active-class');
+// }
 
-//Removing the active class from the section
-function removeActiveClass(section) {
-    const id = section.getAttribute('id');
-    document.querySelector(`#${id}`).classList.remove('your-active-class');
-}
+// //Removing the active class from the section
+// function removeActiveClass(section) {
+//     const id = section.getAttribute('id');
+//     document.querySelector(`#${id}`).classList.remove('your-active-class');
+// }
 
 // calcualting when the section is active
-function makeActiveSection() {
-    sections.forEach(function(section){
-        let elementOffset = section.getBoundingClientRect();
-        if (elementOffset.top <= 150 && elementOffset.bottom >= 150) {
-            addActiveClass(section);
-        } else {
-            removeActiveClass(section);
-        }
-    });
-};
+// function makeActiveSection() {
+//     sections.forEach(function(section){
+//         let elementOffset = section.getBoundingClientRect();
+//         if (elementOffset.top <= 150 && elementOffset.bottom >= 150) {
+//             addActiveClass(section);
+//         } else {
+//             removeActiveClass(section);
+//         }
+//     });
+// };
 // event listener to the dom itself so
-document.addEventListener('scroll', makeActiveSection);
+// document.addEventListener('scroll', makeActiveSection);
 
 // Scroll to anchor ID using scrollTO event
-const links = document.querySelectorAll('.menu__link');
-if (links.length) {
-  links.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      links.forEach((link) => {
-          link.classList.remove('active');
-      });
-      e.preventDefault();
-      link.classList.add('active');
-    });
-  });
-}
+// const links = document.querySelectorAll('.menu__link');
+// if (links.length) {
+//   links.forEach((link) => {
+//     link.addEventListener('click', (e) => {
+//       links.forEach((link) => {
+//           link.classList.remove('active');
+//       });
+//       e.preventDefault();
+//       link.classList.add('active');
+//     });
+//   });
+// }
 
 
